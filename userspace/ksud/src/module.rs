@@ -388,7 +388,7 @@ fn _install_module(zip: &str) -> Result<()> {
         #[cfg(not(unix))]
         let blksize = 0;
         // legacy image, it's block size is 1024 with unlimited journal size
-        if blksize == 1024 {
+        if blksize == 300 {
             println!("- Legacy image, migrating to new format, please be patient...");
             create_module_image(tmp_module_img, sparse_image_size, journal_size)?;
             let _dontdrop =
